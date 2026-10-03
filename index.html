@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sohom Bhaduri | Full-Stack Developer and Generative AI</title>
+  <meta name="description" content="Sohom Bhaduri is a final-year Computer Science Engineering student in Kolkata building full-stack web apps with Java and JavaScript, REST APIs and payment gateways, and exploring Generative AI with Claude Code.">
+  <meta name="author" content="Sohom Bhaduri">
+  <meta name="theme-color" content="#EEF1F4">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sohom Bhaduri | Full-Stack Developer and Generative AI">
+  <meta property="og:description" content="Full-stack web apps, REST APIs, payment gateway integration and AI-assisted development. Final-year CSE student based in Kolkata.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101828'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23EEF1F4'%3ESB%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sohom Bhaduri",
+    "jobTitle": "Aspiring Software Engineer",
+    "email": "mailto:bhadurisoham182@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Kolkata", "addressCountry": "IN" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Swami Vivekananda University" },
+    "knowsAbout": ["Java", "JavaScript", "REST APIs", "Payment gateway integration", "WordPress", "Generative AI", "Prompt engineering", "Google Cloud"],
+    "sameAs": ["https://www.linkedin.com/in/sohom-bhaduri-a6b6682b3"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --chalk: #EEF1F4;
+      --paper: #F8F9FB;
+      --ink: #101828;
+      --ink-soft: #1B2438;
+      --slate: #566074;
+      --line: #D3D9E1;
+      --cobalt: #2540F5;
+      --ok: #0E8F5F;
+      --on-dark: #E7EAF0;
+      --on-dark-muted: #A9B2C3;
+      --on-dark-line: #33405A;
+      --link-dark: #AEBBFF;
+
+      --display: "Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
+      --text: "Newsreader", Georgia, "Times New Roman", serif;
+      --header-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 16px);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--chalk);
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 1.125rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: inherit; }
+    img, svg { max-width: 100%; }
+
+    :focus-visible {
+      outline: 3px solid var(--cobalt);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -60px;
+      background: var(--ink);
+      color: var(--chalk);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-family: var(--display);
+      font-weight: 600;
+      z-index: 50;
+      transition: top .15s;
+    }
+    .skip:focus { top: 12px; }
+
+    .wrap {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: clamp(20px, 5vw, 48px);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: var(--header-h);
+      background: rgba(238, 241, 244, .93);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .nav { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 32px); }
+    .nav a {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: .98rem;
+      color: var(--slate);
+      text-decoration: none;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav a:hover { color: var(--ink); border-bottom-color: var(--cobalt); }
+    .nav .nav-cv {
+      display: inline-flex;
+      align-items: center;
+      color: var(--chalk);
+      background: var(--ink);
+      padding: 9px 16px;
+      border-radius: 8px;
+      border-bottom: 0;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color .15s, color .15s;
+    }
+    .nav .nav-cv:hover { background: var(--cobalt); color: #fff; border-bottom: 0; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 15px 22px;
+      border-radius: 10px;
+      border: 1.5px solid var(--ink);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color .15s, color .15s, border-color .15s;
+    }
+    .btn-primary { background: var(--ink); color: var(--chalk); }
+    .btn-primary:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: var(--chalk); }
+
+    /* Hero */
+    .hero { padding-block: clamp(48px, 9vw, 110px) clamp(56px, 8vw, 96px); }
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(3.4rem, 12.5vw, 8.5rem);
+      line-height: .92;
+      letter-spacing: -0.035em;
+    }
+    .hero h1 span { display: block; }
+    .lede {
+      margin-top: clamp(24px, 4vw, 40px);
+      max-width: 34ch;
+      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Checkout path (hero visual) */
+    .flow { margin-top: clamp(48px, 8vw, 88px); padding-top: 36px; border-top: 1px solid var(--line); }
+    .path {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .path li { position: relative; padding-top: 34px; }
+    .path li::before,
+    .path li::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 16px;
+      right: -24px;
+      height: 2px;
+    }
+    .path li::before { background: var(--line); }
+    .path li::after { background: var(--cobalt); transform-origin: left center; }
+    .path li:last-child::before,
+    .path li:last-child::after { display: none; }
+    .path .dot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--cobalt);
+      box-shadow: 0 0 0 5px var(--chalk);
+    }
+    .path li:last-child .dot { background: var(--ok); }
+    .path h3 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .path p { margin-top: 6px; font-size: 1rem; line-height: 1.45; color: var(--slate); max-width: 22ch; }
+    .flow-note { margin-top: 28px; font-size: 1rem; color: var(--slate); }
+    .flow-note a { color: var(--ink); text-underline-offset: 3px; }
+    .flow-note a:hover { color: var(--cobalt); }
+
+    .path .dot { animation: dot-on .4s calc(var(--i) * .6s + .3s) backwards; }
+    .path .txt { animation: txt-on .5s calc(var(--i) * .6s + .3s) backwards; }
+    .path li::after { animation: fill-x .5s calc(var(--i) * .6s + .6s) backwards; }
+    @keyframes dot-on { from { background: var(--line); transform: scale(.65); } }
+    @keyframes txt-on { from { opacity: .25; } }
+    @keyframes fill-x { from { transform: scaleX(0); } }
+    @keyframes fill-y { from { transform: scaleY(0); } }
+
+    /* Sections */
+    .section { padding-block: clamp(64px, 9vw, 112px); border-top: 1px solid var(--line); }
+    .split { display: grid; gap: 32px; }
+    .split > h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    @media (min-width: 900px) {
+      .split { grid-template-columns: 240px minmax(0, 1fr); gap: 56px; }
+      .split > h2 { position: sticky; top: calc(var(--header-h) + 32px); align-self: start; }
+    }
+
+    .prose p { max-width: 62ch; }
+    .prose p + p { margin-top: 1em; }
+
+    .facts { margin-top: 40px; max-width: 62ch; }
+    .facts div {
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 16px;
+      padding-block: 14px;
+      border-top: 1px solid var(--line);
+    }
+    .facts div:last-child { border-bottom: 1px solid var(--line); }
+    .facts dt { font-family: var(--display); font-weight: 600; font-size: 1rem; }
+    .facts dd { font-size: 1.05rem; line-height: 1.5; }
+    @media (max-width: 520px) { .facts div { grid-template-columns: 1fr; gap: 2px; } }
+
+    /* Skills */
+    .skill-row { display: grid; gap: 12px; padding-block: 22px; border-top: 1px solid var(--line); }
+    .skill-row:first-child { border-top: 0; padding-top: 0; }
+    .skill-row dt { font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
+    @media (min-width: 720px) { .skill-row { grid-template-columns: 200px 1fr; gap: 24px; } }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tags li {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: .95rem;
+      line-height: 1.2;
+      padding: 7px 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    /* Projects */
+    .project {
+      display: grid;
+      gap: 20px;
+      padding-block: 40px;
+      border-top: 1px solid var(--line);
+    }
+    .project:first-child { border-top: 0; padding-top: 0; }
+    .project-meta { display: flex; flex-direction: column; gap: 16px; }
+    .project-year { font-family: var(--display); font-weight: 600; color: var(--slate); }
+    .project h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      max-width: 28ch;
+    }
+    .project-summary { margin-top: 12px; max-width: 58ch; }
+    .project ul.points { margin-top: 18px; display: grid; gap: 10px; max-width: 62ch; }
+    .project ul.points li { position: relative; padding-left: 22px; font-size: 1.05rem; line-height: 1.55; }
+    .project ul.points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 10px;
+      height: 2px;
+      background: var(--cobalt);
+    }
+    @media (min-width: 900px) {
+      .project { grid-template-columns: 200px minmax(0, 1fr); gap: 40px; }
+    }
+
+    /* Achievements */
+    .achievements { display: grid; gap: 40px; }
+    @media (min-width: 720px) { .achievements { grid-template-columns: 1fr 1fr; gap: 48px; } }
+    .ach { border-top: 3px solid var(--ink); padding-top: 20px; }
+    .ach .big {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.6rem, 5.5vw, 4rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .ach p { margin-top: 14px; max-width: 34ch; }
+
+    /* Education */
+    .edu li {
+      display: grid;
+      gap: 4px 24px;
+      padding-block: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .edu li:first-child { border-top: 0; padding-top: 0; }
+    .edu h3 { font-family: var(--display); font-weight: 600; font-size: 1.2rem; line-height: 1.25; }
+    .edu .detail { color: var(--slate); font-size: 1.05rem; }
+    .edu .score { font-family: var(--display); font-weight: 600; }
+    @media (min-width: 720px) {
+      .edu li { grid-template-columns: minmax(0, 1fr) 11rem; align-items: baseline; }
+      .edu .score { text-align: right; }
+    }
+
+    /* Contact */
+    .contact { background: var(--ink); color: var(--on-dark); padding-block: clamp(64px, 9vw, 112px); }
+    .contact-grid { display: grid; gap: 48px; }
+    @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+    .contact h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .contact .intro { margin-top: 20px; max-width: 36ch; color: var(--on-dark-muted); }
+    .direct { margin-top: 32px; display: grid; gap: 0; max-width: 420px; }
+    .direct li { border-top: 1px solid var(--on-dark-line); }
+    .direct li:last-child { border-bottom: 1px solid var(--on-dark-line); }
+    .direct a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 14px;
+      font-family: var(--display);
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--on-dark);
+    }
+    .direct a span:first-child { color: var(--on-dark-muted); font-weight: 400; }
+    .direct a:hover span:last-child { color: var(--link-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .contact :focus-visible { outline-color: var(--link-dark); }
+
+    .form { display: grid; gap: 18px; align-content: start; }
+    .field { display: grid; gap: 6px; }
+    .field label { font-family: var(--display); font-weight: 600; font-size: .98rem; }
+    .field input,
+    .field textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 1.05rem;
+      color: var(--on-dark);
+      background: var(--ink-soft);
+      border: 1.5px solid var(--on-dark-line);
+      border-radius: 10px;
+      padding: 13px 14px;
+    }
+    .field textarea { min-height: 150px; resize: vertical; }
+    .field input:hover, .field textarea:hover { border-color: #52617F; }
+    .field input:focus-visible, .field textarea:focus-visible { outline-offset: 1px; border-color: var(--link-dark); }
+    .btn-send { background: var(--cobalt); border-color: var(--cobalt); color: #fff; justify-self: start; }
+    .btn-send:hover { background: #fff; border-color: #fff; color: var(--ink); }
+    .btn-send:disabled { opacity: .6; cursor: progress; }
+    .status { min-height: 1.6em; font-size: 1rem; color: var(--on-dark-muted); }
+    .status.ok { color: #7EE0B4; }
+    .status.err { color: #FFB4A8; }
+
+    .site-footer { background: var(--ink); color: var(--on-dark-muted); border-top: 1px solid var(--on-dark-line); padding-block: 28px; font-size: .98rem; }
+    .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+    /* Small screens: keep the header to name + Contact */
+    @media (max-width: 760px) {
+      .nav a:not(.nav-cv) { display: none; }
+      .path { grid-template-columns: 1fr; gap: 30px; }
+      .path li { padding: 0 0 0 38px; }
+      .path li::before,
+      .path li::after {
+        top: 22px;
+        bottom: -30px;
+        left: 7px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+      .path li::after { transform-origin: center top; animation-name: fill-y; }
+      .path .dot { top: 3px; }
+      .path p { max-width: 36ch; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .path .dot, .path .txt, .path li::after { animation: none; }
+      .btn, .skip { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Sohom Bhaduri, back to top">Sohom Bhaduri</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cv" href="Sohom_Bhaduri_CV.pdf" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title"><span>Sohom</span><span>Bhaduri</span></h1>
+        <p class="lede">Aspiring software engineer building full-stack web apps and exploring Generative AI with Claude Code.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="Sohom_Bhaduri_CV.pdf" download>Download CV</a>
+          <a class="btn btn-ghost" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+
+        <div class="flow">
+          <ol class="path" aria-label="How an order moves through my e-commerce project">
+            <li style="--i:0">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="txt"><h3>Browser</h3><p>Client-side UI for browsing and checkout</p></div>
+            </li>
+            <li style="--i:1">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="txt"><h3>REST API</h3><p>Connects the UI to server-side business logic</p></div>
+            </li>
+            <li style="--i:2">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="txt"><h3>Payment gateway</h3><p>Secure payment handling for each order</p></div>
+            </li>
+            <li style="--i:3">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="txt"><h3>Order confirmed</h3><p>End-to-end order processing, complete</p></div>
+            </li>
+          </ol>
+          <p class="flow-note">The path an order takes in my 2025 e-commerce project. <a href="#project-ecommerce">See the project</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <h2 id="about-title">About</h2>
+        <div>
+          <div class="prose">
+            <p>I'm a final-year Computer Science Engineering student in Kolkata. I work mainly in Java, JavaScript and C, and I enjoy building and debugging full-stack web apps, from the interface down to the API and the payment flow.</p>
+            <p>Lately I've been learning Generative AI and prompt engineering, using Claude Code to automate repetitive coding work. I care about clean, reusable code, and I pick up new languages, frameworks and tools quickly.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Based in</dt><dd>Kolkata, India</dd></div>
+            <div><dt>Studying</dt><dd>B.Tech in Computer Science Engineering, Swami Vivekananda University. Expected 2027</dd></div>
+            <div><dt>Main languages</dt><dd>Java, JavaScript, C</dd></div>
+            <div><dt>Working style</dt><dd>Comfortable in-office with fast-paced teams. I support teammates' learning and track deliverables against milestones.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap split">
+        <h2 id="skills-title">Skills</h2>
+        <dl>
+          <div class="skill-row">
+            <dt>Languages</dt>
+            <dd><ul class="tags"><li>Java</li><li>JavaScript</li><li>C</li></ul></dd>
+          </div>
+          <div class="skill-row">
+            <dt>Web and APIs</dt>
+            <dd><ul class="tags"><li>REST API design and integration</li><li>Payment gateway integration</li><li>WordPress plugins and themes</li><li>HTML5</li><li>CSS3</li><li>Responsive design</li></ul></dd>
+          </div>
+          <div class="skill-row">
+            <dt>AI and cloud</dt>
+            <dd><ul class="tags"><li>Generative AI</li><li>Prompt engineering</li><li>Claude Code</li><li>Google Cloud</li></ul></dd>
+          </div>
+          <div class="skill-row">
+            <dt>Tools and debugging</dt>
+            <dd><ul class="tags"><li>Chrome Inspector</li><li>Firebug</li><li>Git and GitHub</li><li>VS Code</li><li>Postman</li></ul></dd>
+          </div>
+          <div class="skill-row">
+            <dt>How I work</dt>
+            <dd><ul class="tags"><li>Debugging and troubleshooting</li><li>Code optimization</li><li>Reusable component design</li><li>Project planning and scheduling</li><li>Agile collaboration</li><li>Status reporting</li></ul></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap split">
+        <h2 id="projects-title">Projects</h2>
+        <div>
+          <article class="project" id="project-ecommerce">
+            <div class="project-meta">
+              <span class="project-year">2025</span>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Java</li><li>JavaScript</li><li>REST APIs</li><li>Payment gateway</li>
+              </ul>
+            </div>
+            <div>
+              <h3>E-Commerce Platform with Integrated Payment Gateway</h3>
+              <p class="project-summary">A full-stack e-commerce web app that takes an order from the browser to a confirmed payment.</p>
+              <ul class="points">
+                <li>Integrated a secure payment gateway for end-to-end order processing.</li>
+                <li>Designed and consumed REST APIs that connect the client-side UI to server-side business logic.</li>
+                <li>Built reusable UI and backend components to speed up new features and simplify maintenance.</li>
+                <li>Used Chrome Inspector and browser dev tools to debug and troubleshoot performance across devices.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-meta">
+              <span class="project-year">2025</span>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Generative AI</li><li>Prompt engineering</li><li>Claude Code</li><li>Google Cloud</li>
+              </ul>
+            </div>
+            <div>
+              <h3>AI-Assisted Development Toolkit using Generative AI</h3>
+              <p class="project-summary">A set of prompt-driven workflows that automate repetitive coding tasks.</p>
+              <ul class="points">
+                <li>Applied prompt engineering with Claude Code to cut development time on boilerplate work.</li>
+                <li>Deployed and tested the workflows on Google Cloud, gaining hands-on experience with cloud hosting.</li>
+                <li>Documented reusable prompt templates and coding patterns to share with peers.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-meta">
+              <span class="project-year">2024</span>
+              <ul class="tags" aria-label="Technologies used">
+                <li>WordPress</li><li>Custom plugins</li><li>HTML5</li><li>CSS3</li><li>Firebug</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Custom WordPress Website with Plugin Development</h3>
+              <p class="project-summary">A responsive WordPress site for a client use case, extended with custom plugins.</p>
+              <ul class="points">
+                <li>Built custom plugins to extend core WordPress functionality.</li>
+                <li>Made the design mobile-friendly so it works well on every device.</li>
+                <li>Planned the work with timelines and tracked deliverables against milestones.</li>
+                <li>Fixed cross-browser compatibility issues with Firebug and Chrome Developer Tools.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section" id="achievements" aria-labelledby="ach-title">
+      <div class="wrap split">
+        <h2 id="ach-title">Achievements</h2>
+        <div class="achievements">
+          <div class="ach">
+            <p class="big">500+</p>
+            <p>Data structures and algorithms problems solved across all platforms.</p>
+          </div>
+          <div class="ach">
+            <p class="big">Google Cloud Arcade</p>
+            <p>Hands-on Google Cloud experience through the Google Cloud Arcade program.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="wrap split">
+        <h2 id="edu-title">Education</h2>
+        <ol class="edu">
+          <li>
+            <div>
+              <h3>Swami Vivekananda University</h3>
+              <p class="detail">B.Tech in Computer Science Engineering. Expected 2027</p>
+            </div>
+            <p class="score">CGPA 8.0</p>
+          </li>
+          <li>
+            <div>
+              <h3>Class XII (Higher Secondary)</h3>
+              <p class="detail">Science stream</p>
+            </div>
+            <p class="score">82%</p>
+          </li>
+          <li>
+            <div>
+              <h3>Class X (Secondary)</h3>
+            </div>
+            <p class="score">84%</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 id="contact-title">Get in touch</h2>
+          <p class="intro">I'm looking for software engineering opportunities. Send a message or reach me directly.</p>
+          <ul class="direct">
+            <li><a href="mailto:bhadurisoham182@gmail.com"><span>Email</span><span>bhadurisoham182@gmail.com</span></a></li>
+            <li><a href="tel:+917015229530"><span>Phone</span><span>+91 70152 29530</span></a></li>
+            <li><a href="https://www.linkedin.com/in/sohom-bhaduri-a6b6682b3" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>sohom-bhaduri</span></a></li>
+            <li><a href="Sohom_Bhaduri_CV.pdf" download><span>CV</span><span>Download PDF</span></a></li>
+          </ul>
+        </div>
+
+        <form class="form" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden><label>Leave this field empty: <input name="bot-field"></label></p>
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-send" type="submit" id="send">Send message</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year">2026</span> Sohom Bhaduri</span>
+      <span>Kolkata, India</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var form = document.getElementById('contact-form');
+      var btn = document.getElementById('send');
+      var status = document.getElementById('status');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        status.className = 'status';
+        status.textContent = 'Sending...';
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed');
+            form.reset();
+            status.className = 'status ok';
+            status.textContent = "Message sent. I'll reply to the email address you entered.";
+          })
+          .catch(function () {
+            status.className = 'status err';
+            status.textContent = "Message not sent. Email bhadurisoham182@gmail.com directly.";
+          })
+          .finally(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
+</body>
+</html>
